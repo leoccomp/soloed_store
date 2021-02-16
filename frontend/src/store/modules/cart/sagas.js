@@ -13,13 +13,13 @@ function* addToCart({ id }) {
   );
 
   const stock = yield call(api.get, `/stock/${id}`);
-  const stockAmount = stock.data.amount;
+  const stockAmount = stock.data[0].amount;
   const currentAmount = productExists ? productExists.amount : 0;
 
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
-    toast.error('Quantidade solicitada fora de estoque');
+    toast.error('Quantidade solicitada fora de estoque!');
     return;
   }
 
@@ -29,7 +29,7 @@ function* addToCart({ id }) {
     const response = yield call(api.get, `products/${id}`);
 
     const data = {
-      ...response.data,
+      ...response.data[0],
       amount: 1,
       priceFormatted: formatPrice(response.data.price)
     };
@@ -43,10 +43,10 @@ function* updateAmount({ id, amount }) {
   if (amount <= 0) return;
 
   const stock = yield call(api.get, `stock/${id}`);
-  const stokeAmount = stock.data.amount;
+  const stokeAmount = stock.data[0].amount;
 
   if (amount > stokeAmount) {
-    toast.error('Quantidade solicitada fora de estoque');
+    toast.error('Quantidade solicitada fora de estoque!');
     return;
   }
 

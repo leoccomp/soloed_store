@@ -27,7 +27,7 @@ export default function Home() {
     async function loadProducts() {
       const response = await api.get('products');
 
-      const data = response.data.map(product => ({
+      const data = response.data.products.map(product => ({
         ...product,
         priceFormatted: formatPrice(product.price)
       }));
