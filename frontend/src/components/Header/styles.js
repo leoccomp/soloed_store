@@ -19,8 +19,15 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: #ffff00;
+
+  width: 100vw;
   height: 101px;
-  width: 1440px;
+
+  @media (max-width: 420px) {
+    top: 0;
+    right: 0;
+    left: 0;
+  }
 `;
 
 export const LinkLogo = styled.a`
@@ -36,6 +43,11 @@ export const LinkLogo = styled.a`
     line-height: 15px;
     letter-spacing: 0px;
     text-align: left;
+  }
+
+  @media (max-width: 420px) {
+    margin-left: 20px;
+    margin-top: 20px;
   }
 `;
 
@@ -67,6 +79,10 @@ export const Cart = styled.button`
     line-height: 22px;
     color: #ffff00;
   }
+
+  @media (max-width: 420px) {
+    margin-right: 20px;
+  }
 `;
 
 export const CartMenu = styled.nav`
@@ -78,7 +94,7 @@ export const CartMenu = styled.nav`
   top: 0;
   bottom: 0;
   width: 486px;
-  height: 1024px;
+  height: 100%;
   margin-left: 954px;
 
   background: #ffff00;
@@ -88,6 +104,12 @@ export const CartMenu = styled.nav`
   z-index: 2;
 
   animation: ${animate} 0.5s;
+
+  @media (max-width: 420px) {
+    width: 18%;
+    height: 50%;
+    margin-left: 30vw;
+  }
 `;
 
 export const CartHeader = styled.div`
@@ -96,6 +118,11 @@ export const CartHeader = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 36px;
+
+  @media (max-width: 420px) {
+    width: 100%;
+    left: 0;
+  }
 `;
 
 export const CartHeaderDesc = styled.strong`
@@ -134,6 +161,9 @@ export const CartItems = styled.div`
 
   ::-webkit-scrollbar {
     display: none;
+  }
+  @media (max-width: 420px) {
+    width: 220px;
   }
 `;
 

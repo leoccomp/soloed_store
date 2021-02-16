@@ -6,6 +6,13 @@ export const Container = styled.div`
   height: 601px;
   left: 247px;
   top: 217px;
+
+  @media (max-width: 420px) {
+    width: 100%;
+    height: 100%;
+    left: 20vw;
+    top: 217px;
+  }
 `;
 
 export const ProductList = styled.ul`
@@ -13,6 +20,11 @@ export const ProductList = styled.ul`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   list-style: none;
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Product = styled.li`
@@ -28,6 +40,10 @@ export const Product = styled.li`
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
   border-radius: 8px;
   border-bottom: 0;
+
+  @media (max-width: 400px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const ImageContainer = styled.div`

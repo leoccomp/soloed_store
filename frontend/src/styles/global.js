@@ -16,6 +16,8 @@ export default createGlobalStyle`
       height: 1024px;
       left: 0px;
       top: 0px;
+      right: 0;
+      bottom: 0;
 
       background: #F9F9F9;
 
